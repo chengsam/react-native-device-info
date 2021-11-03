@@ -16,6 +16,7 @@ interface NativeConstants {
   bundleId: string;
   deviceId: string;
   deviceType: DeviceType;
+  deviceModel: string;
   isTablet: boolean;
   model: string;
   systemName: string;
@@ -158,6 +159,7 @@ export interface DeviceInfoModule extends ExposedNativeMethods {
   getBundleId: () => string;
   getDeviceId: () => string;
   getDeviceType: () => string;
+  getDeviceModel: () => string;
   getManufacturer: () => Promise<string>;
   getManufacturerSync: () => string;
   getModel: () => string;

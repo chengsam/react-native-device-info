@@ -68,6 +68,7 @@ RCT_EXPORT_MODULE();
          @"brand": @"Apple",
          @"model": [self getModel],
          @"deviceType": [self getDeviceTypeName],
+         @"deviceModel": [self getDeviceModel],
      };
 }
 
@@ -524,6 +525,10 @@ RCT_EXPORT_METHOD(getFreeDiskStorage:(RCTPromiseResolveBlock)resolve rejecter:(R
 
 - (NSString *) getDeviceTypeName {
     return [DeviceTypeValues objectAtIndex: [self getDeviceType]];
+}
+
+- (NSString *) getDeviceModel {
+    return [UIDevice currentDevice].model;
 }
 
 - (NSArray *) getSupportedAbis {
